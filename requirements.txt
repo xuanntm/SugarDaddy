@@ -1,0 +1,13 @@
+pdfminer.six
+spacy
+nltk
+pandas
+unidecode
+textblob
+# python-tk
+# tcl-tk
+Flask
+authlib
+Werkzeug
+python-dotenv
+psycopg2-binary

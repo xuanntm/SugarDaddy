@@ -1,0 +1,47 @@
+<h1>Analyst Dashboard</h1>
+
+<table>
+    <thead>
+        <tr>
+            {% for col in data[0] %}  <th>{{ col[0] }}</th>  {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<button id="refreshButton">Refresh Data</button>
+
+<script>
+    const refreshButton = document.getElementById('refreshButton');
+
+    refreshButton.addEventListener('click', () => {
+        fetch('/analyst_dashboard', { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                // Update the table with the new data (using JavaScript)
+                // ... (JavaScript code to update the table content)
+                console.log("Data refreshed:", data); // Example: Check the console
+                // Example: Clear the table and repopulate with new data
+                const tableBody = document.querySelector('table tbody');
+                tableBody.innerHTML = ''; // Clear existing rows
+                data.forEach(row => {
+                    const newRow = tableBody.insertRow(); // Insert new row
+                    row.forEach(cell => {
+                        const newCell = newRow.insertCell(); // Insert new cell
+                        newCell.textContent = cell; // Add cell text
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Error refreshing data:', error);
+            });
+    });
+</script>
