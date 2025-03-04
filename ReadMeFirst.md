@@ -35,3 +35,6 @@ Python 3.13.1 is quite new and might not be fully compatible with all libraries,
 
 > data/output/sample_json_to_view.json
 > data/output/esg_cleaned_data_v2.json
+
+
+--no-cache-dir

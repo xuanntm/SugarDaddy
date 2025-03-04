@@ -1,0 +1,10 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "city": "New York",
+    "interests": ["reading", "coding", "traveling"],
+    "address": {
+      "street": "123 Main St",
+      "zip": "10001"
+    }
+  }

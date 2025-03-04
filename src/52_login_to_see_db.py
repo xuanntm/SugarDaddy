@@ -64,7 +64,7 @@ def index():
         return f"Hello, {email}! You are a {role}."  # Or redirect to appropriate page
     return '<a href="/login">Login with Google</a>'
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     redirect_uri = url_for('authorized', _external=True)
     return google.authorize_redirect(redirect_uri)
